@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Sources\basic2d.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\precomp.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\program.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\TicTacToeGrid.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Choice.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\ChoiceSymbol.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\basic2d.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\precomp.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\program.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\ChoiceSymbol.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Choice.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\TicTacToeGrid.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{bda68d93-55ff-4f98-874c-c5e72ea48e6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code">
+      <UniqueIdentifier>{162b8a01-4484-4d4d-bd47-bd88e212623f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\renann\Desktop\deleteme\Hello World\assets\images\X.png" />
+    <Image Include="C:\Users\renann\Desktop\deleteme\Hello World\assets\images\grid.png" />
+    <Image Include="C:\Users\renann\Desktop\deleteme\Hello World\assets\images\O.png" />
+    <Image Include="C:\Users\renann\Desktop\deleteme\Hello World\assets\images\O_white.png" />
+    <Image Include="Resources\grid.png" />
+    <Image Include="Resources\grid_white.png" />
+    <Image Include="Resources\O.png" />
+    <Image Include="Resources\O_white.png" />
+    <Image Include="Resources\X_white.png" />
+    <Image Include="Resources\logo.png" />
+    <Image Include="Resources\X.png" />
+  </ItemGroup>
+</Project>
