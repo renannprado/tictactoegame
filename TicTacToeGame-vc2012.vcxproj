@@ -168,10 +168,6 @@
     <ClInclude Include="Sources\TicTacToeGrid.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="C:\Users\renann\Desktop\deleteme\Hello World\assets\images\grid.png" />
-    <Image Include="C:\Users\renann\Desktop\deleteme\Hello World\assets\images\O.png" />
-    <Image Include="C:\Users\renann\Desktop\deleteme\Hello World\assets\images\O_white.png" />
-    <Image Include="C:\Users\renann\Desktop\deleteme\Hello World\assets\images\X.png" />
     <Image Include="Resources\grid.png" />
     <Image Include="Resources\grid_white.png" />
     <Image Include="Resources\logo.png" />

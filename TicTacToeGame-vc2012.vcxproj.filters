@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Sources\basic2d.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Choice.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\ChoiceSymbol.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\precomp.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\program.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\TicTacToeGrid.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\basic2d.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Choice.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\ChoiceSymbol.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\precomp.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\program.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\TicTacToeGrid.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\grid.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Resources\grid_white.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Resources\logo.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Resources\O.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Resources\O_white.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Resources\X.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Resources\X_white.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{35861b60-9d8c-4720-a075-1b3382198e5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code">
+      <UniqueIdentifier>{a9d48f54-ebe1-497c-af14-881f2046c6bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{d84a37a3-8dc7-4956-95a0-5c59238aaa9f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
