@@ -90,3 +90,8 @@ bool TicTacToeGrid::checkVictory()
 	if (grid[0][0]->getChoiceSymbol() == grid[1][0]->getChoiceSymbol())
 		return true;
 }
+
+void TicTacToeGrid::mouseClickUp(const clan::InputEvent& mouseEvent)
+{
+	//if (mouseEvent.
+}

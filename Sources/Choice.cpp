@@ -9,7 +9,7 @@ Choice::Choice(Canvas& canvas, string filename, ChoiceSymbol c) : choiceSymbol(c
 
 Choice::Choice(ChoiceSymbol c) : choiceSymbol(c)
 {
-
+	
 }
 
 void Choice::clean()

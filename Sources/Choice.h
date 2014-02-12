@@ -11,6 +11,7 @@ namespace TicTacToeGame
 			Choice(Canvas&, string, ChoiceSymbol = ChoiceSymbol::NONE);
 			Choice(ChoiceSymbol = ChoiceSymbol::NONE);
 			ChoiceSymbol getChoiceSymbol();
+			clan::Rect getArea();
 		protected:
 
 		private:	

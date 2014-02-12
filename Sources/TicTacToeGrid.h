@@ -19,6 +19,7 @@ namespace TicTacToeGame
 			static const int marginV = 50; //50px
 			void draw(Canvas&);
 			bool checkVictory();
+			void mouseClickUp(const clan::InputEvent&);
 		private:
 			ChoiceSymbol nextSymbol;
 			vector< vector<Choice*> > grid;
