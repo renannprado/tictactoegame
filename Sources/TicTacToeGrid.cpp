@@ -20,20 +20,9 @@ void TicTacToeGrid::resetGrid(Canvas& canvas)
 	{
 		for (int y = 0; y < TicTacToeGrid::gridSizeY; y++)
 		{
-			//grid[i].push_back(new Choice(canvas, "Resources/X_white.png"));
 			grid[i].push_back(nullptr);
 		}
 	}
-
-	/*for (int i = 0; i < TicTacToeGrid::gridSizeX; ++i)
-	{
-		this->grid[i].resize(TicTacToeGrid::gridSizeY);
-		this->grid[i].push_back(new Choice(canvas, "Resources/logo.png"));
-	}*/
-
-	/*for (int x = 0; x < grid.size(); x++)
-		for (int y = 0; y < grid[x].size(); y++)
-%			grid[x].push_back(new Choice(canvas, "Resources/logo.png"));*/
 } 
 
 TicTacToeGrid::~TicTacToeGrid()
@@ -78,11 +67,4 @@ void TicTacToeGrid::draw(Canvas& canvas)
 			}
 		}
 	}
-
-		/*for(Choice* c : row) 
-		{
-			c->set_color(Color::yellow);
-			c->set_scale(0.7f, 0.7f);
-			c->draw(canvas, (place++ * c->get_size().height) + marginH, (place * c->get_size().width) + marginV);
-		}*/
 }
