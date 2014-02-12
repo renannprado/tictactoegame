@@ -103,6 +103,46 @@ void Basic2D::on_input_up(const clan::InputEvent &key)
 			this->grid->doPlay(*this->canvasPointer, 0,0);
 			break;
 		}
+		case keycode_2:
+		{
+			this->grid->doPlay(*this->canvasPointer, 0,1);
+			break;
+		}
+		case keycode_3:
+		{
+			this->grid->doPlay(*this->canvasPointer, 0,2);
+			break;
+		}
+		case keycode_4:
+		{
+			this->grid->doPlay(*this->canvasPointer, 1,0);
+			break;
+		}
+		case keycode_5:
+		{
+			this->grid->doPlay(*this->canvasPointer, 1,1);
+			break;
+		}
+		case keycode_6:
+		{
+			this->grid->doPlay(*this->canvasPointer, 1,2);
+			break;
+		}
+		case keycode_7:
+		{
+			this->grid->doPlay(*this->canvasPointer, 2,0);
+			break;
+		}
+		case keycode_8:
+		{
+			this->grid->doPlay(*this->canvasPointer, 2,1);
+			break;
+		}
+		case keycode_9:
+		{
+			this->grid->doPlay(*this->canvasPointer, 2,2);
+			break;
+		}
 	}
 
 }

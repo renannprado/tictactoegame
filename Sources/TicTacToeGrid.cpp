@@ -37,12 +37,14 @@ void TicTacToeGrid::doPlay(Canvas& canvas, int x, int y)
 		case ChoiceSymbol::X:
 		{
 			this->grid[x][y] = new Choice(canvas, "Resources/X_white.png", this->nextSymbol);
+			this->grid[x][y]->set_color(Color::red);
 			this->nextSymbol = ChoiceSymbol::O; //switch to the next ChoiceSymbol
 			break;
 		}
 		case ChoiceSymbol::O:
 		{
 			this->grid[x][y] = new Choice(canvas, "Resources/O_white.png", this->nextSymbol);
+			this->grid[x][y]->set_color(Color::yellow);
 			this->nextSymbol = ChoiceSymbol::X; //switch to the next ChoiceSymbol
 			break;
 		}
@@ -52,29 +54,31 @@ void TicTacToeGrid::doPlay(Canvas& canvas, int x, int y)
 void TicTacToeGrid::draw(Canvas& canvas)
 {
 	const int distanceBetweenMoves = 50;
+	const int padding = 75;
 	const int distanceBetweenNumbersH = 170;
 	const int distanceBetweenNumbersV = 200;
 	const int barSize = 8; //size (in pixels) that construct the tictactoe grid
-	gridImage.draw(canvas, distanceBetweenMoves, distanceBetweenMoves);
+	gridImage.draw(canvas, 50, 50);
 
-	int number = 0;
+	int placeNumber = 0;
 
 	for (int x = 0; x < this->grid.size(); x++)
 	{
 		for (int y = 0; y < this->grid[x].size(); y++)
 		{
-			number++;
+			placeNumber++;
 			if (this->grid[x][y] != nullptr)
 			{
-				this->grid[x][y]->set_color(Color::yellow);
-				//this->grid[x][y]->set_scale(0.7f, 0.7f);
-				this->grid[x][y]->draw(canvas, (x + 1) * distanceBetweenMoves + barSize, (y + 1) * distanceBetweenMoves + barSize);
+				Choice* c = this->grid[x][y];
+				int posX = x * (distanceBetweenMoves + c->get_width()) + padding;
+				int posY = y * (distanceBetweenMoves + c->get_height()) + padding;
+				c->draw(canvas, posX, posY);
 			}
 			else
 			{
 				clan::Font font(canvas, "tahoma", 50);
 				std::ostringstream text;
-				text << number; //converting the indexes to a string
+				text << placeNumber; //converting the placeNumber to a string
 				font.draw_text(canvas, (x + 1) * distanceBetweenNumbersH, (y + 1) * distanceBetweenNumbersV, text.str());
 			}
 		}
