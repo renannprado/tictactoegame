@@ -73,8 +73,8 @@ void TicTacToeGrid::draw(Canvas& canvas)
 			if (this->grid[x][y] != nullptr)
 			{
 				this->grid[x][y]->set_color(Color::yellow);
-				this->grid[x][y]->set_scale(0.7f, 0.7f);
-				this->grid[x][y]->draw(canvas, x * distanceBetween + barSize, y * distanceBetween + barSize);
+				//this->grid[x][y]->set_scale(0.7f, 0.7f);
+				this->grid[x][y]->draw(canvas, (x + 1) * distanceBetween + barSize, (y + 1) * distanceBetween + barSize);
 			}
 		}
 	}
