@@ -19,6 +19,9 @@
     <ClCompile Include="Sources\TicTacToeGrid.cpp">
       <Filter>Code</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Helpers.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\basic2d.h">
@@ -37,6 +40,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Sources\TicTacToeGrid.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Helpers.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -89,9 +89,19 @@ bool TicTacToeGrid::checkVictory()
 {
 	if (grid[0][0]->getChoiceSymbol() == grid[1][0]->getChoiceSymbol())
 		return true;
+	else
+		return false;
 }
 
 void TicTacToeGrid::mouseClickUp(const clan::InputEvent& mouseEvent)
 {
-	//if (mouseEvent.
+	for (unsigned int i = 0; i < grid.size(); i++)
+		for (unsigned int j = 0; j < grid[i].size(); j++)
+		{
+			Choice* c = grid[i][j];
+
+			Rect r = c->getArea();
+			
+			//if (mouseEvent.mouse_pos.x >= 
+		}	
 }

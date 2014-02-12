@@ -21,3 +21,8 @@ ChoiceSymbol Choice::getChoiceSymbol()
 {
 	return this->choiceSymbol;
 }
+
+clan::Rect Choice::getArea()
+{
+	return Rect(get_width(), get_height(), get_height(), get_width());
+}

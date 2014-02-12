@@ -149,6 +149,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Helpers.cpp" />
     <ClCompile Include="Sources\ChoiceSymbol.cpp" />
     <ClCompile Include="Sources\basic2d.cpp" />
     <ClCompile Include="Sources\precomp.cpp">
@@ -160,6 +161,7 @@
     <ClCompile Include="Sources\TicTacToeGrid.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Helpers.h" />
     <ClInclude Include="Sources\Choice.h" />
     <ClInclude Include="Sources\ChoiceSymbol.h" />
     <ClInclude Include="Sources\basic2d.h" />
