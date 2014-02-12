@@ -8,10 +8,10 @@ namespace TicTacToeGame
 	class TicTacToeGrid
 	{
 		public:
-			TicTacToeGrid();
+			TicTacToeGrid(Canvas&);
 			~TicTacToeGrid();
 			ChoiceSymbol getNextSymbol();
-			void doPlay(int x, int y);	
+			void doPlay(Canvas&, int, int);	
 			void resetGrid(Canvas&);
 			static const int gridSizeX = 3;
 			static const int gridSizeY = 3;
@@ -21,7 +21,7 @@ namespace TicTacToeGame
 		private:
 			ChoiceSymbol nextSymbol;
 			vector< vector<Choice*> > grid;
-			Canvas* canvas;
+			Image gridImage;
 		protected:
 
 	};

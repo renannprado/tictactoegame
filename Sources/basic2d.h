@@ -41,4 +41,6 @@ private:
 
 private:
 	bool quit;
+	TicTacToeGame::TicTacToeGrid* grid;
+	clan::Canvas* canvasPointer;
 };

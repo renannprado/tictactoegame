@@ -44,7 +44,6 @@ int Program::main(const std::vector<std::string> &args)
 	clan::SetupGL setup_gl;
 //	clan::SetupSWRender setup_swrender;
 
-
 	// Start the Application
 	Basic2D app;
 	int retval = app.start(args);

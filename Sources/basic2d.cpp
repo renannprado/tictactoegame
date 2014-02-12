@@ -48,6 +48,8 @@ int Basic2D::start(const std::vector<std::string> &args)
 	clan::DisplayWindow window(desc);
 	clan::Canvas canvas(window);
 
+	this->canvasPointer = &canvas;
+
 	// Connect the Window close event
 	clan::Slot slot_quit = window.sig_window_close().connect(this, &Basic2D::on_window_close);
 
@@ -60,8 +62,8 @@ int Basic2D::start(const std::vector<std::string> &args)
 
 	Choice choice(canvas, "Resources/logo.png");
 
-	TicTacToeGame::TicTacToeGrid grid;
-	grid.resetGrid(canvas);
+	this->grid = new TicTacToeGrid(canvas);
+	this->grid->resetGrid(canvas);
 
 	float sin_count = 0.0f;
 
@@ -74,50 +76,8 @@ int Basic2D::start(const std::vector<std::string> &args)
 
 		// Clear the display in a dark blue nuance
 		canvas.clear(clan::Colorf(0.0f,0.0f,0.2f));
-		//canvas.clear(clan::Colorf::aliceblue);
 
-		grid.draw(canvas);
-//		choice.draw(canvas, 10,20);
-
-		//choice.draw(canvas, 300, 300);
-
-		// Update the moving elements
-		/*sin_count += 4.0f * game_time.get_time_elapsed();
-
-		std::string text("Welcome to the ClanLib SDK");
-		clan::Size text_size = font.get_text_size(canvas, text);
-		font.draw_text(canvas, ( ( canvas.get_width() - text_size.width) / 2), 32, text, clan::Colorf::white);
-
-		clan::Size canvas_size = canvas.get_size();
-
-		// Draw moving lines
-		float ypos = sin(sin_count)*60.0f + 120.0f;
-		canvas.draw_line(0, ypos-1.0f, (float) canvas_size.width, ypos-1.0f,clan::Colorf(0.5f, 0.0f, 0.0f));
-		canvas.draw_line(0, ypos+198.0f, (float) canvas_size.width, ypos+198.0f, clan::Colorf(0.5f, 0.0f, 0.0f));
-
-		// Show the logo image.
-		spr_logo.draw(canvas, canvas_size.width-spr_logo.get_width(), canvas_size.height-spr_logo.get_height());
-
-		// Add a clipping rect
-		canvas.push_cliprect(clan::Rect(0, (int)(ypos), canvas_size.width, (int)(ypos+198)));
-
-		// Draw a rectangle in the center of the screen
-		// going from (240, 140) -> (440, 340) _not_ including the 
-		// pixels in the right-most column and bottom-most row (440, 340)
-		canvas.fill_rect(clan::Rectf(240.0f, 140.0f, 440.0f, 340.0f), clan::Colorf::white);
-
-		// Frame the rectangle with red lines
-		canvas.draw_box(240.0f, 140.0f, 440.0f, 340.0f, clan::Colorf(1.0f, 0.0f, 0.0f));
-
-		// Show a few alpha-blending moving rectangles that moves in circles
-		float x = cos(sin_count)*120.0f;
-		float y = sin(sin_count)*120.0f;
-		canvas.fill_rect(clan::Rectf( 320.0f + x -30.0f, 240.0f + y -30.0f, clan::Sizef(30.0f, 30.0f)), clan::Colorf(0.0f, 1.0f, 0.0, 0.5f));
-		x = cos(sin_count+clan::PI)*120.0f;
-		y = sin(sin_count+clan::PI)*120.0f;
-		canvas.fill_rect(clan::Rectf( 320.0f + x -30.0f, 240 + y -30.0f,clan:: Sizef(30.0f, 30.0f)), clan::Colorf(1.0f, 1.0f, 0.0, 0.5f));
-
-		canvas.pop_cliprect();*/
+		this->grid->draw(canvas);
 
 		window.flip(1);
 
@@ -135,6 +95,16 @@ void Basic2D::on_input_up(const clan::InputEvent &key)
 	{
 		quit = true;
 	}
+
+	switch (key.id)
+	{
+		case keycode_1:
+		{
+			this->grid->doPlay(*this->canvasPointer, 0,0);
+			break;
+		}
+	}
+
 }
 
 // The window was closed
@@ -142,5 +112,3 @@ void Basic2D::on_window_close()
 {
 	quit = true;
 }
-
-
