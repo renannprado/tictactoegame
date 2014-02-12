@@ -5,7 +5,8 @@ using namespace TicTacToeGame;
 
 bool TicTacToeGame::pointInArea(clan::Rect r, int x, int y)
 {
-	r.
+	//if (r.contains
 
 	return true;
 }
+

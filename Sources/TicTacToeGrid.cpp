@@ -53,11 +53,6 @@ void TicTacToeGrid::doPlay(Canvas& canvas, int x, int y)
 
 void TicTacToeGrid::draw(Canvas& canvas)
 {
-	const int distanceBetweenMoves = 50;
-	const int padding = 75;
-	const int distanceBetweenNumbersH = 170;
-	const int distanceBetweenNumbersV = 200;
-	const int barSize = 8; //size (in pixels) that construct the tictactoe grid
 	gridImage.draw(canvas, 50, 50);
 
 	int placeNumber = 0;
@@ -99,9 +94,16 @@ void TicTacToeGrid::mouseClickUp(const clan::InputEvent& mouseEvent)
 		for (unsigned int j = 0; j < grid[i].size(); j++)
 		{
 			Choice* c = grid[i][j];
+			int posX = i * (distanceBetweenMoves + (c != nullptr ? c->get_width() : 150)) + padding;
+			int posY = j * (distanceBetweenMoves + (c != nullptr ? c->get_height() : 150)) + padding;
 
-			Rect r = c->getArea();
+			Vec2<int> point(posX, posY);
+
+			Rect r = c->getArea().set_top_left(point);
 			
-			//if (mouseEvent.mouse_pos.x >= 
+			if (r.contains(mouseEvent.mouse_pos))
+			{
+				int asd = 1;
+			}
 		}	
 }
