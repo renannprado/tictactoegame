@@ -20,7 +20,7 @@ void TicTacToeGrid::resetGrid(Canvas& canvas)
 	{
 		for (int y = 0; y < TicTacToeGrid::gridSizeY; y++)
 		{
-			grid[i].push_back(nullptr);
+			grid[i].push_back(new Choice());
 		}
 	}
 } 
@@ -67,7 +67,7 @@ void TicTacToeGrid::draw(Canvas& canvas)
 		for (int y = 0; y < this->grid[x].size(); y++)
 		{
 			placeNumber++;
-			if (this->grid[x][y] != nullptr)
+			if (this->grid[x][y] != nullptr && this->grid[x][y]->getChoiceSymbol() != ChoiceSymbol::NONE)
 			{
 				Choice* c = this->grid[x][y];
 				int posX = x * (distanceBetweenMoves + c->get_width()) + padding;
@@ -83,4 +83,10 @@ void TicTacToeGrid::draw(Canvas& canvas)
 			}
 		}
 	}
+}
+
+bool TicTacToeGrid::checkVictory()
+{
+	if (grid[0][0]->getChoiceSymbol() == grid[1][0]->getChoiceSymbol())
+		return true;
 }

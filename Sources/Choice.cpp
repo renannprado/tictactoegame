@@ -7,7 +7,17 @@ Choice::Choice(Canvas& canvas, string filename, ChoiceSymbol c) : choiceSymbol(c
 	
 }
 
+Choice::Choice(ChoiceSymbol c) : choiceSymbol(c)
+{
+
+}
+
 void Choice::clean()
 {
 	this->choiceSymbol = ChoiceSymbol::NONE;
+}
+
+ChoiceSymbol Choice::getChoiceSymbol()
+{
+	return this->choiceSymbol;
 }

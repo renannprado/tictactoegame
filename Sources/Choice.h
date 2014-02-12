@@ -9,6 +9,8 @@ namespace TicTacToeGame
 	{
 		public:
 			Choice(Canvas&, string, ChoiceSymbol = ChoiceSymbol::NONE);
+			Choice(ChoiceSymbol = ChoiceSymbol::NONE);
+			ChoiceSymbol getChoiceSymbol();
 		protected:
 
 		private:	

@@ -18,6 +18,7 @@ namespace TicTacToeGame
 			static const int marginH = 50; //50px
 			static const int marginV = 50; //50px
 			void draw(Canvas&);
+			bool checkVictory();
 		private:
 			ChoiceSymbol nextSymbol;
 			vector< vector<Choice*> > grid;
