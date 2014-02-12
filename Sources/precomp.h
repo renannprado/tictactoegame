@@ -1,5 +1,7 @@
 #pragma once
 
+#include <sstream>
+#include <string>
 #include <ClanLib/core.h>
 #include <ClanLib/application.h>
 #include <ClanLib/display.h>
