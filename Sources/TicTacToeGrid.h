@@ -12,6 +12,7 @@ namespace TicTacToeGame
 			~TicTacToeGrid();
 			ChoiceSymbol getNextSymbol();
 			void doPlay(Canvas&, int, int);	
+			void cleanPlay(int, int);
 			void resetGrid(Canvas&);
 			static const int gridSizeX = 3;
 			static const int gridSizeY = 3;

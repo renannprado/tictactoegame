@@ -33,6 +33,10 @@ TicTacToeGrid::~TicTacToeGrid()
 
 void TicTacToeGrid::doPlay(Canvas& canvas, int x, int y)
 {
+	//adding rule which doesn't let the player change the move once it's placed
+	if (this->grid[x][y]->getChoiceSymbol() != ChoiceSymbol::NONE)
+		return;
+
 	switch (this->nextSymbol)
 	{
 		case ChoiceSymbol::X:
@@ -77,6 +81,16 @@ void TicTacToeGrid::draw(Canvas& canvas)
 				text << placeNumber; //converting the placeNumber to a string
 				font.draw_text(canvas, (x + 1) * distanceBetweenNumbersH, (y + 1) * distanceBetweenNumbersV, text.str());
 			}
+
+			int posX = x * (distanceBetweenMoves + 150) + padding;
+			int posY = y * (distanceBetweenMoves + 150) + padding;
+
+			Vec2<int> point(posX, posY);
+			Sizex<int> sizeRect(150,150);
+
+			Rect r = Rect(point, sizeRect);
+
+			canvas.draw_box(r, Colorf::white);
 		}
 	}
 }
@@ -94,36 +108,31 @@ void TicTacToeGrid::mouseClickUp(const clan::InputEvent& mouseEvent)
 	for (int i = 0; i < grid.size(); i++)
 		for (int j = 0; j < grid[i].size(); j++)
 		{
-			Choice* c = grid[i][j];
-			
-			if (c->getChoiceSymbol() != ChoiceSymbol::NONE)
+			int posX = i * (distanceBetweenMoves + 150) + padding;
+			int posY = j * (distanceBetweenMoves + 150) + padding;
+
+			Vec2<int> point(posX, posY);
+			Sizex<int> sizeRect(150,150);
+
+			Rect r = Rect(point, sizeRect);
+
+			if (!r.contains(mouseEvent.mouse_pos))
 			{
-				int posX = i * (distanceBetweenMoves + c->get_width()) + padding;
-				int posY = j * (distanceBetweenMoves + c->get_height()) + padding;
-
-				Vec2<int> point(posX, posY);
-
-				Rect r = c->getArea().set_top_left(point);
-			
-				if (r.contains(mouseEvent.mouse_pos))
-				{
-					this->doPlay(*this->canvasPointer, i, j);
-				}
+				continue;
 			}
-			else
+
+			if (mouseEvent.id == clan::InputCode::mouse_left)
 			{
-				int posX = i * (distanceBetweenMoves + 150) + padding;
-				int posY = j * (distanceBetweenMoves + 150) + padding;
-
-				Vec2<int> point(posX, posY);
-				Sizex<int> sizeRect(150,150);
-
-				Rect r = Rect(point, sizeRect);
-
-				if (r.contains(mouseEvent.mouse_pos))
-				{
-					this->doPlay(*this->canvasPointer, i, j);
-				}
+				this->doPlay(*this->canvasPointer, i, j);
+			}
+			else if (mouseEvent.id == clan::InputCode::mouse_right)
+			{
+				this->cleanPlay(i, j);
 			}
 		}	
+}
+
+void TicTacToeGrid::cleanPlay(int x, int y)
+{
+	this->grid[x][y] = new Choice();
 }
