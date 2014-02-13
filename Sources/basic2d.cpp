@@ -49,8 +49,7 @@ int Basic2D::start(const std::vector<std::string> &args)
 
 		this->grid->draw(canvas);
 		
-		string s = "asdas";
-		string title = s + "asd";
+		string title;
 
 		std::ostringstream text;
 		text << mouse.get_position().x;
@@ -62,7 +61,8 @@ int Basic2D::start(const std::vector<std::string> &args)
 
 		window.set_title(title);
 
-		canvas.draw_point(mouse.get_position().x, mouse.get_position().y, Colorf::cornflowerblue);
+		//canvas.draw_point(mouse.get_position().x, mouse.get_position().y, Colorf::cornflowerblue);
+		//canvas.draw_point(0, 0, Colorf::cornflowerblue);
 
 		window.flip(1);
 
