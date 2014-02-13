@@ -14,6 +14,7 @@ int Basic2D::start(const std::vector<std::string> &args)
 	clan::DisplayWindowDescription desc;
 	desc.set_title("TicTacToeGame");
 	desc.set_size(clan::Size(640, 480), true);
+	desc.set_fullscreen(true);
 	desc.set_allow_resize(true);
 
 	clan::DisplayWindow window(desc);
@@ -26,6 +27,8 @@ int Basic2D::start(const std::vector<std::string> &args)
 
 	// Connect the Window close event
 	clan::Slot slot_quit = window.sig_window_close().connect(this, &Basic2D::on_window_close);
+
+	InputDevice mouse = window.get_ic().get_mouse();
 
 	clan::Slot slot_mouse = window.get_ic().get_mouse(0).sig_key_up().connect(this->grid, &TicTacToeGrid::mouseClickUp);
 
@@ -45,12 +48,21 @@ int Basic2D::start(const std::vector<std::string> &args)
 		canvas.clear(clan::Colorf(0.0f,0.0f,0.2f));
 
 		this->grid->draw(canvas);
+		
+		string s = "asdas";
+		string title = s + "asd";
 
-		string title;
+		std::ostringstream text;
+		text << mouse.get_position().x;
 
-
+		title = "MouseX: " +  text.str();
+		text = ostringstream();
+		text << mouse.get_position().y;
+		title += ", MouseY: " + text.str();
 
 		window.set_title(title);
+
+		canvas.draw_point(mouse.get_position().x, mouse.get_position().y, Colorf::cornflowerblue);
 
 		window.flip(1);
 
