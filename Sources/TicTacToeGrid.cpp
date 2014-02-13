@@ -6,6 +6,7 @@ using namespace std;
 
 TicTacToeGrid::TicTacToeGrid(Canvas& canvas)
 {
+	this->canvasPointer = &canvas;
 	this->gridImage = Image(canvas, "Resources/grid_white.png");
 }
 
@@ -90,20 +91,39 @@ bool TicTacToeGrid::checkVictory()
 
 void TicTacToeGrid::mouseClickUp(const clan::InputEvent& mouseEvent)
 {
-	for (unsigned int i = 0; i < grid.size(); i++)
-		for (unsigned int j = 0; j < grid[i].size(); j++)
+	for (int i = 0; i < grid.size(); i++)
+		for (int j = 0; j < grid[i].size(); j++)
 		{
 			Choice* c = grid[i][j];
-			int posX = i * (distanceBetweenMoves + (c != nullptr ? c->get_width() : 150)) + padding;
-			int posY = j * (distanceBetweenMoves + (c != nullptr ? c->get_height() : 150)) + padding;
-
-			Vec2<int> point(posX, posY);
-
-			Rect r = c->getArea().set_top_left(point);
 			
-			if (r.contains(mouseEvent.mouse_pos))
+			if (c->getChoiceSymbol() != ChoiceSymbol::NONE)
 			{
-				int asd = 1;
+				int posX = i * (distanceBetweenMoves + c->get_width()) + padding;
+				int posY = j * (distanceBetweenMoves + c->get_height()) + padding;
+
+				Vec2<int> point(posX, posY);
+
+				Rect r = c->getArea().set_top_left(point);
+			
+				if (r.contains(mouseEvent.mouse_pos))
+				{
+					this->doPlay(*this->canvasPointer, i, j);
+				}
+			}
+			else
+			{
+				int posX = i * (distanceBetweenMoves + 150) + padding;
+				int posY = j * (distanceBetweenMoves + 150) + padding;
+
+				Vec2<int> point(posX, posY);
+				Sizex<int> sizeRect(150,150);
+
+				Rect r = Rect(point, sizeRect);
+
+				if (r.contains(mouseEvent.mouse_pos))
+				{
+					this->doPlay(*this->canvasPointer, i, j);
+				}
 			}
 		}	
 }

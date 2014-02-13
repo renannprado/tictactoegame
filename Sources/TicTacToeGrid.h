@@ -24,12 +24,12 @@ namespace TicTacToeGame
 			ChoiceSymbol nextSymbol;
 			vector< vector<Choice*> > grid;
 			Image gridImage;
+			Canvas* canvasPointer;
 			static const int distanceBetweenMoves = 50;
 			static const int padding = 75;
 			static const int distanceBetweenNumbersH = 170;
 			static const int distanceBetweenNumbersV = 200;
 			static const int barSize = 8; //size (in pixels) that construct the tictactoe grid
-			
 		protected:
 
 	};

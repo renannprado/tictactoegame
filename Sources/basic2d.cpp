@@ -12,7 +12,7 @@ int Basic2D::start(const std::vector<std::string> &args)
 
 	// Set the window
 	clan::DisplayWindowDescription desc;
-	desc.set_title("ClanLib Basic2D Example");
+	desc.set_title("TicTacToeGame");
 	desc.set_size(clan::Size(640, 480), true);
 	desc.set_allow_resize(true);
 
@@ -45,6 +45,12 @@ int Basic2D::start(const std::vector<std::string> &args)
 		canvas.clear(clan::Colorf(0.0f,0.0f,0.2f));
 
 		this->grid->draw(canvas);
+
+		string title;
+
+
+
+		window.set_title(title);
 
 		window.flip(1);
 
