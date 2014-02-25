@@ -95,6 +95,7 @@ void TicTacToeGrid::draw(Canvas& canvas)
 	}
 }
 
+//this method is not finished yet, feel free to finish it :)
 bool TicTacToeGrid::checkVictory()
 {
 	if (grid[0][0]->getChoiceSymbol() == grid[1][0]->getChoiceSymbol())
